@@ -1,0 +1,1 @@
+﻿AdventOfCode.Day2.main();
