@@ -46,7 +46,7 @@ namespace AdventOfCode
 
         private static void PartOne()
         {
-            List<string> input = File.ReadAllLines("..\\..\\..\\Day2.txt").ToList();
+            List<string> input = LoadInputFile();
 
             int totalScore = 0;
             char delim = ' ';
@@ -57,12 +57,17 @@ namespace AdventOfCode
                 totalScore += PlayRound(Shapes[lineSplit[0]], Shapes[lineSplit[1]]);
             }
 
-            Console.WriteLine(totalScore);
+            Console.WriteLine("Total Score Part 1 : " + totalScore);
+        }
+
+        private static List<string> LoadInputFile()
+        {
+            return File.ReadAllLines("input.txt").ToList();
         }
 
         private static void PartTwo()
         {
-            List<string> input = File.ReadAllLines("..\\..\\..\\Day2.txt").ToList();
+            List<string> input = LoadInputFile();
 
             int totalScore = 0;
             char delim = ' ';
@@ -96,7 +101,7 @@ namespace AdventOfCode
                 totalScore += PlayRound(theirMove, yourMove);
             }
 
-            Console.WriteLine(totalScore);
+            Console.WriteLine("Total Score Part 2 : " + totalScore);
         }
 
         private static Result RequiredResult(string move)
@@ -125,6 +130,7 @@ namespace AdventOfCode
 
         public static void main()
         {
+            PartOne();
             PartTwo();
         }
     }

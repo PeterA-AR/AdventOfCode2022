@@ -12,7 +12,7 @@ namespace AdventOfCode
         {
             Console.WriteLine("Advent of Code - Day 1");
 
-            var list = File.ReadAllLines("..\\..\\..\\Day1_Input.txt").ToArray();
+            var list = File.ReadAllLines("input.txt").ToArray();
 
             List<int> sums = new List<int>();
 
@@ -38,7 +38,6 @@ namespace AdventOfCode
             for (int i = 0; i < sums.Count; i++)
             {
                 biggestNumber = sums[i] > biggestNumber ? sums[i] : biggestNumber;
-                Console.WriteLine($"Sum #{i}: {sums[i]}");
             }
 
             Console.WriteLine("Biggest: " + biggestNumber);
