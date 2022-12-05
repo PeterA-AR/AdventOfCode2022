@@ -57,11 +57,19 @@ namespace AdventOfCode
             var sourceStack = instructionSplit[1];
             var targetStack = instructionSplit[2];
 
+            var moveStack = "";
             Console.WriteLine("Before"); PrintStacks();
             for (int i = 0; i < numToMove; i++)
             {
-                stacks[targetStack].Push(stacks[sourceStack].Pop());
+                moveStack += stacks[sourceStack].Pop();
             }
+            var flip = moveStack.Reverse();
+
+            foreach (var c in flip)
+            {
+                stacks[targetStack].Push(c);
+            }
+
             Console.WriteLine("\nAfter"); PrintStacks();
             Console.WriteLine("\n\n");
         }
@@ -123,7 +131,8 @@ namespace AdventOfCode
 
         public static void main()
         {
-            PartOne();
+            //PartOne();
+            PartTwo();
         }
     }
 }
