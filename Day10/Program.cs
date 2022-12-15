@@ -1,0 +1,1 @@
+﻿AdventOfCode.Day10.main();
